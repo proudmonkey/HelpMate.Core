@@ -21,8 +21,8 @@ using HelpMate.Core;
 Assuming you would want to convert a `string` value to a `DateTime` object type. To handle this, you would probably use one of the built-in methods in .NET such as the [Convert.ToDateTime()](https://docs.microsoft.com/en-us/dotnet/api/system.convert.todatetime?view=netcore-3.1) method.
 
 ```csharp
- string dateString = "6/10/2020";
- var date = Convert.ToDateTime(dateString);
+string dateString = "6/10/2020";
+var date = Convert.ToDateTime(dateString);
 ``` 
 
 That should work perfectly as we expect, however that will throw a `System.FormatException` if you are trying to convert a `string` value which is not a valid date format. This could potentially happen especially when our code is consuming data from user inputs or other data sources that we never control. To fix that, we can use the [DateTime.TryParse()](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tryparse?view=netcore-3.1) method to safely handle the conversion as shown in the following:
