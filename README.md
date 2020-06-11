@@ -53,7 +53,7 @@ if (date.IsValidDateTime())
 }  
 ```
 
-As you could probably guessed, the implementation in the preceding code is somewhat similar to `DateTime.TryParse()`. Yes it similar and in fact it uses `DateTime.TryParse()` method under the hood. The goal here is to make your code much cleaner and short.
+As you could probably guessed, the implementation in the preceding code is somewhat similar to `DateTime.TryParse()`. Yes it similar and in fact it uses `DateTime.TryParse()` method under the hood. The goal is to provide convenience and to make your code much cleaner and shorter.
 
 # Available Extension Methods
 
