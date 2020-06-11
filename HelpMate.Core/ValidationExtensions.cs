@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Text.Json;
+using HelpMate.Core.Internals;
 using System.Text.RegularExpressions;
 
 namespace HelpMate.Core
@@ -51,6 +52,55 @@ namespace HelpMate.Core
             return (checksum % 10) == 0;
         }
 
+        public static bool IsValidPhoneNumber(this string value, int minLength = default, int maxLength = default)
+        {
+            value = value.Replace("+", string.Empty).TrimEnd();
+            value = PhoneNumberUtility.RemoveExtension(value);
+
+            if(minLength != default)
+            {
+                if(value.Length < minLength)
+                {
+                    return false;
+                }
+            }
+
+            if (maxLength != default)
+            {
+                if (value.Length > maxLength)
+                {
+                    return false;
+                }
+            }
+
+            bool digitFound = false;
+            foreach (char c in value)
+            {
+                if (char.IsDigit(c))
+                {
+                    digitFound = true;
+                    break;
+                }
+            }
+
+            if (!digitFound)
+            {
+                return false;
+            }
+
+            foreach (char c in value)
+            {
+                if (!(char.IsDigit(c)
+                    || char.IsWhiteSpace(c)
+                    || PhoneNumberUtility.AdditionalPhoneNumberCharacters.IndexOf(c) != -1))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         public static bool IsValidJson(this string json)
         {
             json = json.Trim();
@@ -73,10 +123,13 @@ namespace HelpMate.Core
             }
         }
 
-        public static bool IsValidDateTime(DateTime? date) 
+        public static bool IsValidDateTime(this DateTime? date) 
             => date == default ? false : true;
 
-        public static bool IsValidDateTimeString(string date) 
+        public static bool IsValidDateTime(this DateTime date)
+            => date == default ? false : true;
+
+        public static bool IsValidDateTimeString(this string date) 
             => date.ToDateTime() == default ? false : true;
 
         public static bool IsFutureDate(this string date) 
@@ -99,5 +152,11 @@ namespace HelpMate.Core
 
         public static bool IsHtml(this string value)
              => Regex.IsMatch(value, @"<\s*([^ >]+)[^>]*>.*?<\s*/\s*\1\s*>");
+
+        public static bool IsAlphaNumeric(this string value)
+            => value.All(char.IsLetterOrDigit);
+
+        public static bool IsAlphaNumericStrict(this string value)
+            => value.All(c => (c >= 48 && c <= 57 || c >= 65 && c <= 90 || c >= 97 && c <= 122));
     }
 }
