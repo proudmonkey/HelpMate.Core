@@ -68,3 +68,6 @@ bool IsDecimalNumber(this string value)
 bool IsBoolean(this string value)
 bool IsHtml(this string value)
 ```
+
+# Attribution
+Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
