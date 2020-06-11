@@ -105,6 +105,10 @@ bool IsAlphaNumeric(this string value)
 bool IsAlphaNumericStrict(this string value)
 ```
 
+# Release History
+
+See release logs here: [Release Logs](https://github.com/proudmonkey/HelpMate.Core/blob/master/RELEASE.md)
+
 # Feedback and Give a Star!
 It's still in its initial version, opensource and of course contributions are welcome. I’m pretty sure there are still lots of things to improve in this library. Try it out and let me know your thoughts.
 
