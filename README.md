@@ -27,7 +27,7 @@ Assuming you would want to convert a `string` value to a `DateTime` object type.
 
 That should work perfectly as we expect, however that will throw a `System.FormatException` if you are trying to convert a `string` value which is not a valid date format. This could potentially happen especially when our code is consuming data from user inputs or other data sources that we never control. To fix that, we can use the [DateTime.TryParse()](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tryparse?view=netcore-3.1) method to safely handle the conversion as shown in the following:
 
-```
+```csharp
 string dateString = "60/1011/2020"; // this is an invalid date
 var isValid = DateTime.TryParse(dateString, out var date);
 
