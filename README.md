@@ -2,7 +2,7 @@
 
 # HelpMate.Core
 
-A tiny helper for writing .NET Core applications. This library provides a simple set of extenstion methods that you can use to perform common validations and conversions in C#.
+A tiny helper for writing .NET Core applications. This library provides a simple set of extension methods that you can use to perform common validations and conversions in C#.
 
 # Installation
 1. Download and Install the latest `AutoWrapper.Core` from NuGet or via CLI:
