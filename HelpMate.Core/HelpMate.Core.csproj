@@ -2,7 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageLicenseFile></PackageLicenseFile>
+    <Description>A tiny helper for writing .NET Core applications. This library provides a simple set of extenstion methods that you can use to perform common validations and conversions in C#.</Description>
+    <PackageProjectUrl>https://github.com/proudmonkey/HelpMate.Core</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>helpmatecore_logo.png</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryUrl>https://github.com/proudmonkey/HelpMate.Core</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Helper,Utilities,C#,.NET Core, Extensions,Common Functions</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="helpmatecore_logo.png" />
+    <None Remove="helpmatecore_logo.png" />
+    <None Include="helpmatecore_logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="4.7.2" />
