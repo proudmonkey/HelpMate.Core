@@ -5,7 +5,7 @@
 A tiny helper for writing .NET Core applications. This library provides a simple set of extension methods that you can use to perform common validations and conversions in C#.
 
 # Installation
-1. Download and Install the latest `HelpMate.Core` from [NuGet](https://www.nuget.org/packages/HelpMate.Core/) or via CLI:
+1. Download and Install the latest `HelpMate.Core` from [NuGet](https://www.nuget.org/packages/HelpMate.Core/) using Package Manager or via CLI:
 
 ```
 PM> Install-Package HelpMate.Core -Version 1.1.0
