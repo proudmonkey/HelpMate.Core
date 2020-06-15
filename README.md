@@ -1,6 +1,6 @@
 <img align="right" src="/HelpMate.Core/helpmatecore_logo.png" />
 
-# HelpMate.Core
+# HelpMate.Core [![Nuget](https://img.shields.io/nuget/v/HelpMate.Core?color=blue)](https://www.nuget.org/packages/HelpMate.Core) [![Nuget downloads](https://img.shields.io/nuget/dt/HelpMate.Core?color=green)](https://www.nuget.org/packages/HelpMate.Core)
 
 A tiny helper for writing .NET Core applications. This library provides a simple set of extension methods that you can use to perform common validations and conversions in C#.
 
