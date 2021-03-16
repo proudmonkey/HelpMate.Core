@@ -5,9 +5,9 @@ using System.Text.Json;
 using HelpMate.Core.Internals;
 using System.Text.RegularExpressions;
 
-namespace HelpMate.Core
+namespace HelpMate.Core.Extensions
 {
-    public static class ValidationExtensions
+    public static class FormatValidationExtension
     {
         public static bool IsValidEmailFormat(this string value)
         {
@@ -124,16 +124,16 @@ namespace HelpMate.Core
         }
 
         public static bool IsValidDateTime(this DateTime? date) 
-            => date == default ? false : true;
+            => date != default;
 
         public static bool IsValidDateTime(this DateTime date)
-            => date == default ? false : true;
+            => date != default;
 
         public static bool IsValidDateTimeString(this string date) 
-            => date.ToDateTime() == default ? false : true;
+            => date.ToDateTime() != default;
 
         public static bool IsFutureDate(this string date) 
-            => date.ToDateTime() < DateTime.Today ? false : true;
+            => date.ToDateTime() >= DateTime.Today;
 
         public static bool IsValidStandardDateString(this string value) 
             => DateTime.TryParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out _);

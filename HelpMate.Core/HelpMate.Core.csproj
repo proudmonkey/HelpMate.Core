@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
@@ -10,10 +10,10 @@
     <PackageIconUrl />
     <RepositoryUrl>https://github.com/proudmonkey/HelpMate.Core</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
-    <PackageTags>Helper,Utilities,C#,.NET Core, Extensions,Common Functions</PackageTags>
+    <PackageTags>C# Helper,C# Utilities,C# Extension Methods,.NET Core Extension Methods, Extension Methods, Common Functions, Validations, Value Handling</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Vincent Maverick Durano</Authors>
-    <Version>1.1.0</Version>
+    <Version>2.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="4.7.2" />
+    <PackageReference Include="System.Text.Json" Version="5.0.1" />
   </ItemGroup>
 
 </Project>
