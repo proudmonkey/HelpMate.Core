@@ -8,13 +8,13 @@ A tiny helper for writing .NET Core applications. This library provides a simple
 1. Download and Install the latest `HelpMate.Core` from [NuGet](https://www.nuget.org/packages/HelpMate.Core/) using Package Manager or via CLI:
 
 ```
-PM> Install-Package HelpMate.Core -Version 1.1.0
+PM> Install-Package HelpMate.Core -Version 2.1.0
 ```
 
 2. Declare the following namespace in the class:
 
 ```csharp
-using HelpMate.Core;
+using HelpMate.Core.Extensions;
 ```
 
 # Sample Usage
@@ -39,7 +39,7 @@ if (isValid)
 
 You can see that our code is now safe to handle `DateTime` conversion, however, the code is kinda long to just do a basic conversion. Imagine you have a lot of the same conversion cluttering within the different areas of your project. That could be messy and may cost you a bit of development time. To avoid that, you would end up creating some helper functions that do common tasks such as conversions. 
 
-With `HelpMate.Core`, you don't need to write helper functions yourself anymore every time you implement a new project that do common things, not unless if necessary. Instead, you can just plug this package into your project and then you're good to go.
+With `HelpMate.Core`, you don't need to write helper functions yourself anymore every time you implement a new project that does common things, not unless if necessary. Instead, you can just plug this package into your project and then you're good to go.
 
 Here's a sample usage on how to do `DateTime` conversion easily:
 
@@ -57,7 +57,7 @@ As you could probably guessed, the implementation in the preceding code is somew
 
 # Available Extension Methods
 
-Here are the list of available methods as of version 1.
+Here are the list of available methods as of version 2.x.
 
 ### Converters
 
@@ -65,26 +65,39 @@ Here are the list of available methods as of version 1.
 DateTime ToDateTime(this string value)
 DateTime? ToNullableDateTime(this string value)
 short ToInt16(this string value)
+short? ToNullableInt16(this string value)
 int ToInt32(this string value)
 int? ToNullableInt32(this string value)
 long ToInt64(this string value)
 long? ToNullableInt64(this string value)
+byte ToByte(this string value)
+byte? ToNullableByte(this string value)
 bool ToBoolean(this string value)
+bool? ToNullableBoolean(this string value)
 float ToFloat(this string value)
+float? ToNullableFloat(this string value)
 decimal ToDecimal(this string value)
+decimal? ToNullableDecimal(this string value)
 double ToDouble(this string value)
-string ToBase64Encode(this string value)
-string ToBase64Encode(this byte[] value)
-string ToBase64Decode(this string value)
+double? ToNullableDouble(this string value)
+Guid ToGuid(this string value)
+Guid? ToNullableGuid(this string value)
+string ToBase64Encode(this string value) 
+string ToBase64Encode(this byte[] value) 
+string ToBase64Decode(this string value) 
 byte[] ToByteFromBase64CharArray(this string value) 
-byte[] ToByteArray(this string value)
-string ToDateTimeFormat(this string date, string format)
-static string ToCamelCase(this string value)
+byte[] ToByteArray(this string value) 
+string ToDateTimeFormat(this string date, string format) 
+string ToDateTimeFormat(this string date, string format, CultureInfo cultureInfo)
+T ToEnum<T>(this string value, T defaultValue, bool ignoreCase = false)
+string ToCamelCase(this string value)
+string ToJson<T>(this T value, JsonSerializerOptions jsonOptions = null)
 int GetYearsFromDate(this DateTime date)
 int GetYearsDifference(this DateTime date, DateTime dateToCompare)
+Format Validation Extensions
 ```
 
-### Validators
+### Validations
 
 ```csharp
 bool IsValidEmailFormat(this string value)
@@ -103,14 +116,39 @@ bool IsBoolean(this string value)
 bool IsHtml(this string value)
 bool IsAlphaNumeric(this string value)
 bool IsAlphaNumericStrict(this string value)
+Null Handling Extensions
 ```
+
+### Null Handling
+```csharp
+IEnumerable<T> AsNotNull<T>(this IEnumerable<T> source)
+bool IsNotNull<T>(this IEnumerable<T> source)
+bool IsNotNull<T>(this T source)
+bool IsNull<T>(this IEnumerable<T> source)
+bool IsNull<T>(this T source)
+Introducing Throw
+```
+
+### ThrowsWhen Clauses
+```
+ValueValidator.ThrowsWhen.Null(T input, string parameterName);
+ValueValidator.ThrowsWhen.Null(T input, string parameterName, string message);
+ValueValidator.ThrowsWhen.NullOrWhiteSpace(string input, string parameterName);
+ValueValidator.ThrowsWhen.NullOrEmpty(Guid? input, string parameterName);
+ValueValidator.ThrowsWhen.False(bool input, string messsage);
+ValueValidator.ThrowsWhen.True(bool input, string messsage);
+ValueValidator.ThrowsWhen.NotDefined(object input);
+```
+
+# Samples
+Check out the following link for sample usage:
+* [Version 2.1.0 Release](https://vmsdurano.com/helpmate-core-2-1-0-released/)
 
 # Release History
 
 See release logs here: [Release Logs](https://github.com/proudmonkey/HelpMate.Core/blob/master/RELEASE.md)
 
 # Feedback and Give a Star!
-It's still in its initial version, opensource and of course contributions are welcome. I’m pretty sure there are still lot of things to improve in this library. Try it out and let me know your thoughts.
 
 Feel free to submit a ticket if you find bugs or request a new feature. Your valuable feedback is much appreciated to better improve this library. If you find this useful, please give it a **star** to show your support for this project.
 
