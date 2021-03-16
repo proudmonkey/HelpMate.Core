@@ -126,11 +126,10 @@ bool IsNotNull<T>(this IEnumerable<T> source)
 bool IsNotNull<T>(this T source)
 bool IsNull<T>(this IEnumerable<T> source)
 bool IsNull<T>(this T source)
-Introducing Throw
 ```
 
 ### ThrowsWhen Clauses
-```
+```csharp
 ValueValidator.ThrowsWhen.Null(T input, string parameterName);
 ValueValidator.ThrowsWhen.Null(T input, string parameterName, string message);
 ValueValidator.ThrowsWhen.NullOrWhiteSpace(string input, string parameterName);
