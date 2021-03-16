@@ -1,11 +1,11 @@
 <img align="right" src="/HelpMate.Core/helpmatecore_logo.png" />
 
-# HelpMate.Core
+# HelpMate.Core [![Nuget](https://img.shields.io/nuget/v/HelpMate.Core?color=blue)](https://www.nuget.org/packages/HelpMate.Core) [![Nuget downloads](https://img.shields.io/nuget/dt/HelpMate.Core?color=green)](https://www.nuget.org/packages/HelpMate.Core)
 
 A tiny helper for writing .NET Core applications. This library provides a simple set of extension methods that you can use to perform common validations and conversions in C#.
 
 # Installation
-1. Download and Install the latest `HelpMate.Core` from NuGet or via CLI:
+1. Download and Install the latest `HelpMate.Core` from [NuGet](https://www.nuget.org/packages/HelpMate.Core/) using Package Manager or via CLI:
 
 ```
 PM> Install-Package HelpMate.Core -Version 1.1.0
@@ -53,7 +53,7 @@ if (date.IsValidDateTime())
 }  
 ```
 
-As you could probably guessed, the implementation in the preceding code is somewhat similar to `DateTime.TryParse()`. Yes it similar and in fact it uses `DateTime.TryParse()` method under the hood. The goal here is to make your code much cleaner and short.
+As you could probably guessed, the implementation in the preceding code is somewhat similar to `DateTime.TryParse()`. Yes it is and in fact, it uses the `DateTime.TryParse()` method under the hood. The goal is to provide convenience and to make your code much cleaner and shorter.
 
 # Available Extension Methods
 
@@ -110,7 +110,7 @@ bool IsAlphaNumericStrict(this string value)
 See release logs here: [Release Logs](https://github.com/proudmonkey/HelpMate.Core/blob/master/RELEASE.md)
 
 # Feedback and Give a Star!
-It's still in its initial version, opensource and of course contributions are welcome. I’m pretty sure there are still lots of things to improve in this library. Try it out and let me know your thoughts.
+It's still in its initial version, opensource and of course contributions are welcome. I’m pretty sure there are still lot of things to improve in this library. Try it out and let me know your thoughts.
 
 Feel free to submit a ticket if you find bugs or request a new feature. Your valuable feedback is much appreciated to better improve this library. If you find this useful, please give it a **star** to show your support for this project.
 
